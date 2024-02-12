@@ -12,6 +12,7 @@ export async function POST(request: NextRequest) {
             to: email,
             subject: "Verified Email!",
             react: EmailTemplate(email, token),
+            text: "good",
         });
         return NextResponse.json(data);
     } catch (error) {
