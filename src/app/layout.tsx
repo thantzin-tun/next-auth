@@ -3,11 +3,9 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import { NextAuthProvider } from "./provider";
 import "animate.css";
-const roboto = Roboto({
-    subsets: ["latin"],
-    weight: "500",
-    variable: "--font-roboto",
-});
+import localFont from "next/font/local";
+
+const myFont = localFont({ src: "../assets/fonts/Roboto.ttf", weight: "600" });
 
 export const metadata: Metadata = {
     title: "Authenticate",
@@ -21,7 +19,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={roboto.className}>
+            <body className={myFont.className}>
                 <NextAuthProvider>{children}</NextAuthProvider>
             </body>
         </html>

@@ -1,7 +1,8 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import style from "./page.module.css";
 import { motion } from "framer-motion";
+import { fetchData } from "../../../actions/fetch";
 
 const AuthLayout = ({ children }: any) => {
     return (

@@ -8,6 +8,7 @@ import { check_user_authorize_withEmail } from "../data/check_user";
 import { generateToken_func } from "@/lib/generate_verification_token";
 import { get_url } from "@/lib/get_url";
 
+
 export const register = async (values: z.infer<typeof RegisterSchema>) => {
     const validationResult = RegisterSchema.safeParse(values);
     const baseUrl = get_url();
@@ -16,6 +17,7 @@ export const register = async (values: z.infer<typeof RegisterSchema>) => {
         return { error: "Invalid Fields" };
     }
 
+    //Prepare
     let { username, email, password } = validationResult.data;
     let hashPassword = await bcrypt.hash(password, 10);
 

@@ -23,7 +23,6 @@ model User {
   accounts Account[]
 }
 
-
 model Account {
   id                 String  @id @default(auto()) @map("_id") @db.ObjectId
   userId             String  @map("user_id")

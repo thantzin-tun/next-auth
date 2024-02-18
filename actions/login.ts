@@ -13,6 +13,8 @@ import { get_url } from "@/lib/get_url";
 
 export const login = async (values: z.infer<typeof LoginSchema>) => {
     const validationResult = LoginSchema.safeParse(values);
+
+    //Dynamic Url
     const baseUrl = get_url();
 
     if (!validationResult.success) {

@@ -31,6 +31,7 @@ import { useState, useTransition } from "react";
 import { register } from "../../../../actions/register";
 
 const SignUp = () => {
+    
     const [isPending, startTransition] = useTransition();
 
     const searchParams = useSearchParams();

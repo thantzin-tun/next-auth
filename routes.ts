@@ -13,3 +13,5 @@ export const authenticationProviderRoutes = "/api/auth";
 
 //If user is logged in , redirect to home page
 export const DEFAULT_LOGIN_REDIRECT = "/home";
+
+export const publicRoutes = ["/auth/verification"];

@@ -1,5 +1,6 @@
 import { db } from "../config/db";
 
+//Check token in Verification Collections with email or token
 export const verification_with_token = async (token: string) => {
     try {
         let verificationToken = await db.verification.findUnique({

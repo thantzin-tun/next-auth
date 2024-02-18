@@ -4,6 +4,7 @@ import authConfig from "./auth.config";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { db } from "./config/db";
 import { check_user_authorize_withID } from "./data/check_user";
+import { error } from "console";
 
 export const {
     handlers: { GET, POST },
@@ -11,6 +12,10 @@ export const {
     signIn,
     signOut,
 } = NextAuth({
+    pages: {
+        signIn: "auth/login",
+        error: "auth/error",
+    },
     events: {
         async linkAccount({ user }) {
             //check multiple providers
